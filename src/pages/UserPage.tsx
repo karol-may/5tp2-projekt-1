@@ -1,19 +1,6 @@
-function UserPage(){
+import { users } from "../data/user";
 
-    let users = [
-        {
-            id: 1,
-            name: "Karol",
-            surname: "May",
-            email: "karol@imay.pl"
-        },
-        {
-            id: 2,
-            name: "Adam",
-            surname: "September",
-            email: "adam@iseptember.pl"
-        }
-    ]
+function UserPage(){
 
     return (
     <div>
@@ -35,7 +22,11 @@ function UserPage(){
                             <td>{v.name}</td>
                             <td>{v.surname}</td>
                             <td>{v.email}</td>
-                            <td>xxx</td>
+                            <td className="d-flex gap-1">
+                                <button className="btn btn-sm btn-info"><i className="bi bi-eye-fill"></i></button>
+                                <button className="btn btn-sm btn-primary"><i className="bi bi-pencil-fill"></i></button>
+                                <button className="btn btn-sm btn-danger"><i className="bi bi-trash-fill"></i></button>
+                            </td>
                         </tr>
                         )
                     }
