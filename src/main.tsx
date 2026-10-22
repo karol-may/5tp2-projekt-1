@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from 'react-router'
 import { UserPage } from './pages/UserPage.tsx'
 import { UserShowPage } from './pages/UserShowPage.tsx'
 import { NavBar } from './components/NavBar.tsx'
+import { UserEditPage } from './pages/UserEditPage.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -16,6 +17,8 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/" element={<App />} />
         <Route path="/user" element={<UserPage/>} />
         <Route path="/user/:id" element={<UserShowPage/>} />        
+        <Route path="/user/:id/edit" element={<UserEditPage/>} />        
+        <Route path="/user/:id/delete" element={<UserShowPage/>} />        
       </Routes>
     </div>
     </BrowserRouter>
