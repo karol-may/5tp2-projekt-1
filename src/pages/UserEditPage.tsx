@@ -13,7 +13,22 @@ function UserEditPage(){
 
     return (
     <div>
-        {user.id} {user.name}
+        <div>
+            <label className="form-label">Id:</label>
+            <input id="id" name="id" className="form-control" type="text" disabled/>
+        </div>
+        <div>
+            <label className="form-label">Imię:</label>
+            <input id="name" name="name" className="form-control" type="text"/>
+        </div>
+        <div>
+            <label className="form-label">Nazwisko:</label>
+            <input id="surname" name="surname" className="form-control" type="text"/>
+        </div>
+        <div>
+            <label className="form-label">Email:</label>
+            <input id="email" name="email" className="form-control" type="email"/>
+        </div>
     </div>
     );
 }
