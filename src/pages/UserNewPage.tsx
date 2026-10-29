@@ -2,7 +2,6 @@ import { useState } from "react";
 import type { UserType } from "../types/UserType";
 
 function UserNewPage(){
-
    
     let [formData, setFormData] = useState<UserType>({        
         name: "",

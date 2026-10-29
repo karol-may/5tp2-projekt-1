@@ -1,7 +1,28 @@
+import { useEffect, useState } from "react";
 import { users } from "../data/user";
+import type { UserType } from "../types/UserType";
+import { neon } from "../lib/neon";
 
 function UserPage(){
+    const [users, setUsers] = useState<UserType[]>([]);
 
+    useEffect(() => {
+        async function getData() {
+            const { data, error } = await neon
+                .from("users")
+                .select("*")
+                .order("id", { ascending: false });
+
+            if (error) {
+                console.error(error);
+                return;
+            }
+
+            setUsers(data ?? []);
+        }
+
+        getData();
+    }, []);
     return (
     <div>
         <table className="table table-striped table-bordered">
